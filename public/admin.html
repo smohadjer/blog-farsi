@@ -1,69 +1,73 @@
 <!doctype html>
-<html class="no-js" lang="en"  >
+<html lang="fa" dir="rtl" class="lang-fa">
 <head>
     <meta charset="utf-8">
     <title>Blog admin</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/rtl.css">
     <link rel="stylesheet" href="/css/admin.css">
 </head>
 <body>
     <main>
         <header>
-            <div class="logo">Blog</div>
+            <div class="logo">وبلاگ مسعود مهاجر</div>
             <nav>
-                <a href="/">Home</a>
-                <a href="/admin">Admin</a>
+                <a href="/">صفحه اصلی </a>
             </nav>
         </header>
         <section>
             <div class="edit">
-                <select disabled>
-                    <option value="">Select post to edit...</option>
+                <label for="select-post">انتخاب پست برای ویرایش: *</label>
+                <select disabled id="select-post" name="select-post">
+                    <option value="">انتخاب پست برای ویرایش...</option>
                 </select>
-                <span class="loading">Fetching list of blog articles...</span>
+                <span class="loading">در حال دانلود لیست مقالات وبلاگ...</span>
             </div>
             <form action="/api/blog" method="POST">
                 <div class="row row--two-columns required">
-                    <label for="date">Date: *</label>
-                    <input required type="date" name="date" pattern="\d{4}-\d{2}-\d{2}">
+                    <label for="date">تاریخ: *</label>
+                    <input required type="date" id="date" name="date" pattern="\d{4}-\d{2}-\d{2}">
+                    <a target="_blank" href="https://www.taghvim.com/converter/">تبدیل تاریخ</a>
                 </div>
                 <div class="row row--two-columns required">
-                    <label for="title">Title: *</label>
-                    <input required name="title">
+                    <label for="title">عنوان: *</label>
+                    <input required name="title" id="title">
                 </div>
                 <div class="row row--two-columns required">
-                    <label for="slug">Slug: *</label>
-                    <input name="slug" placeholder="my-first-post">
+                    <label for="slug">آدرس صفحه
+                        : *</label>
+                    <input name="slug" id="slug" placeholder="my-first-post">
                 </div>
                 <div class="row row--two-columns">
-                    <label for="content">Summay:</label>
-                    <textarea rows="5" cols="50" name="summary" placeholder="If your post is long add a summay to show on blog home page instead of the whole post."></textarea>
+                    <label for="summary">خلاصه:</label>
+                    <textarea rows="5" cols="50" name="summary" id="summary" placeholder="اگر پست شما طولانی است به جای کل پست، خلاصه ای برای نمایش در صفحه اصلی وبلاگ اضافه کنید."></textarea>
                 </div>
                 <div class="row row--two-columns required">
-                    <label for="content">Content: *</label>
-                    <textarea required rows="10" cols="50" name="content" placeholder="You can use Markdown here"></textarea>
+                    <label for="content">محتوا: *</label>
+                    <textarea required rows="10" cols="50" name="content" id="content" placeholder="در اینجا می توانید از Markdown استفاده کنید"></textarea>
                 </div>
                 <div class="row row--two-columns">
-                    <label for="tags">Tags:</label>
-                    <input list="tags" name="tags" placeholder="tag1, tag2">
+                    <label for="tags">کلید واژه ها:</label>
+                    <input list="tags" name="tags" id="tags" placeholder="کلمات کلیدی را با کاما جدا کنید">
                 </div>
                 <div class="row row--two-columns">
-                    <label>Permission:</label>
+                    <label>اجازه:</label>
                     <input type="checkbox" id="permission" name="permission" value="private">
-                    <label for="permission">Private</label>
+                    <label for="permission">خصوصی</label>
                 </div>
                 <div class="row row--two-columns required">
                     <span></span>
                     <span>
-                        <button>Submit</button>
+                        <button>ارسال</button>
                         <input type="reset">
                     </span>
                 </div>
             </form>
         </section>
         <footer>
-            <span>&copy; Saeid Mohadjer 2023</span>
+            <span>&copy; مسعود مهاجر
+            </span>
             <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis">Markdown Cheatsheet</a>
         </footer>
     </main>

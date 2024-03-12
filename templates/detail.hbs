@@ -1,18 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl" class="lang-fa">
     <head>
         <meta charset="utf-8">
         <title>{{title}}</title>
         <meta name="description" content="Blog">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/rtl.css">
     </head>
     <body>
         <main>
             {{> header }}
             <section>
                 <article id="{{this._id}}" class="post">
-                    {{#if date}}
+                    {{#if date}}منتشر شده در
                         <time datetime="{{this.data}}">{{date}}</time>
                     {{/if}}
                     <h1>{{title}}</h1>

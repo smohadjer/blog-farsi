@@ -1,6 +1,7 @@
 body {
-  font-family: arial, helvetica, veradana, sans-serif;
+  font-family: primary, helvetica, veradana, sans-serif;
   font-size: 18px;
+  line-height: 1.5;
   margin: 0;
 }
 
@@ -43,6 +44,14 @@ article {
   margin: 0;
   font-size: 1.5rem;
   color: black;
+
+  a {
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }
 
 .post .responsive {
@@ -80,10 +89,6 @@ article {
   display: inline-block;
   font-size: smaller;
   font-style: italic;
-}
-
-.post time::before {
-  content: "Published on ";
 }
 
 .post code {

@@ -6,7 +6,7 @@ export default async (req, res) => {
     try {
         await client.connect();
         const database = client.db('blog');
-        const collection = database.collection('demo-posts');
+        const collection = database.collection('masoud');
 
         if (req.method === 'GET') {
             const posts = await getPosts(req, collection);

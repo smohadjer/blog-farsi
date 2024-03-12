@@ -42,8 +42,8 @@
     }
 }
 
-
 select, option, input:not([type]=checkbox), textarea {
+  font-family: primary, arial, verdana, sans-serif;
   font-size: 18px;
   display: block;
   width: 100%;
@@ -60,6 +60,7 @@ select, option, input:not([type]=checkbox), textarea {
 }
 
 form {
+  font-family: primary, arial, verdana, sans-serif;
   margin: 1em 0;
 
   input, textarea {
