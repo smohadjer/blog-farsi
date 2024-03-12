@@ -1,0 +1,72 @@
+<!doctype html>
+<html class="no-js" lang="en"  >
+<head>
+    <meta charset="utf-8">
+    <title>Blog admin</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="logo">Blog</div>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/admin">Admin</a>
+            </nav>
+        </header>
+        <section>
+            <div class="edit">
+                <select disabled>
+                    <option value="">Select post to edit...</option>
+                </select>
+                <span class="loading">Fetching list of blog articles...</span>
+            </div>
+            <form action="/api/blog" method="POST">
+                <div class="row row--two-columns required">
+                    <label for="date">Date: *</label>
+                    <input required type="date" name="date" pattern="\d{4}-\d{2}-\d{2}">
+                </div>
+                <div class="row row--two-columns required">
+                    <label for="title">Title: *</label>
+                    <input required name="title">
+                </div>
+                <div class="row row--two-columns required">
+                    <label for="slug">Slug: *</label>
+                    <input name="slug" placeholder="my-first-post">
+                </div>
+                <div class="row row--two-columns">
+                    <label for="content">Summay:</label>
+                    <textarea rows="5" cols="50" name="summary" placeholder="If your post is long add a summay to show on blog home page instead of the whole post."></textarea>
+                </div>
+                <div class="row row--two-columns required">
+                    <label for="content">Content: *</label>
+                    <textarea required rows="10" cols="50" name="content" placeholder="You can use Markdown here"></textarea>
+                </div>
+                <div class="row row--two-columns">
+                    <label for="tags">Tags:</label>
+                    <input list="tags" name="tags" placeholder="tag1, tag2">
+                </div>
+                <div class="row row--two-columns">
+                    <label>Permission:</label>
+                    <input type="checkbox" id="permission" name="permission" value="private">
+                    <label for="permission">Private</label>
+                </div>
+                <div class="row row--two-columns required">
+                    <span></span>
+                    <span>
+                        <button>Submit</button>
+                        <input type="reset">
+                    </span>
+                </div>
+            </form>
+        </section>
+        <footer>
+            <span>&copy; Saeid Mohadjer 2023</span>
+            <a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet#emphasis">Markdown Cheatsheet</a>
+        </footer>
+    </main>
+    <script src="/js/admin.js"></script>
+</body>
+</html>
